@@ -1,41 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Open</title>
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100vh;
-    }
-
-    a {
-      display: block;
-      width: 100%;
-      min-height: 100vh;
-      background-image: url("IMG_2205.jpeg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    /* Mobile fokus */
-    @media (max-width: 768px) {
-      a {
-        background-position: center 30%;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open</title>
+<style>
+  body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 40px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 16px 28px;
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    user-select: none;
+  }
+  /* bllokon tap normal */
+  .btn:active { transform: none; }
+</style>
 </head>
 
 <body>
-  <a href="https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1">
-    <!-- element bosh vetëm që a të ketë height -->
-    <span></span>
-  </a>
+
+<img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+     alt="girl"
+     style="width:220px;border-radius:12px;margin-bottom:20px;">
+
+<p><b>Mbaje shtyp butonin poshtë</b><br>
+dhe zgjidh <b>“Open in browser”</b> 👇</p>
+
+<a class="btn"
+   href="https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1"
+   target="_blank"
+   onclick="event.preventDefault();">
+OPEN IN BROWSER
+</a>
+
 </body>
 </html>
