@@ -2,21 +2,43 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Open</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open</title>
+<style>
+  body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 40px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 16px 28px;
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    user-select: none;
+  }
+  /* bllokon tap normal */
+  .btn:active { transform: none; }
+</style>
 </head>
 
-<body style="text-align:center;margin-top:80px;font-family:Arial">
+<body>
 
-<p>Tap butonin për ta hapur në browser 👇</p>
+<img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+     alt="girl"
+     style="width:220px;border-radius:12px;margin-bottom:20px;">
 
-<a href="https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1"
+<p><b>Mbaje shtyp butonin poshtë</b><br>
+dhe zgjidh <b>“Open in browser”</b> 👇</p>
+
+<a class="btn"
+   href="https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1"
    target="_blank"
-   style="display:inline-block;padding:16px 28px;
-          background:#000;color:#fff;
-          text-decoration:none;border-radius:10px;
-          font-size:18px;">
-Open in Browser
+   onclick="event.preventDefault();">
+OPEN IN BROWSER
 </a>
 
 </body>
