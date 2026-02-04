@@ -13,14 +13,18 @@
       font-family: Arial, sans-serif;
       background: #111;
       color: #fff;
+      touch-action: manipulation;
     }
     button {
-      padding: 20px 30px;
+      padding: 22px 34px;
       font-size: 18px;
       border: none;
-      border-radius: 12px;
+      border-radius: 14px;
       background: #4CAF50;
       color: white;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
     }
   </style>
 </head>
@@ -32,25 +36,17 @@
   let timer;
   const holdTime = 2000; // 2 seconds
   const link = "https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1";
-
   const btn = document.getElementById("holdBtn");
 
-  btn.addEventListener("touchstart", startHold);
-  btn.addEventListener("mousedown", startHold);
-
-  btn.addEventListener("touchend", cancelHold);
-  btn.addEventListener("mouseup", cancelHold);
-  btn.addEventListener("mouseleave", cancelHold);
-
-  function startHold() {
+  btn.addEventListener("pointerdown", () => {
     timer = setTimeout(() => {
-      window.location.href = link;
+      window.open(link, "_self");
     }, holdTime);
-  }
+  });
 
-  function cancelHold() {
-    clearTimeout(timer);
-  }
+  btn.addEventListener("pointerup", () => clearTimeout(timer));
+  btn.addEventListener("pointerleave", () => clearTimeout(timer));
+  btn.addEventListener("pointercancel", () => clearTimeout(timer));
 </script>
 
 </body>
