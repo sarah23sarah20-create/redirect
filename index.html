@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hold to Open</title>
   <style>
     body {
+      margin: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
       background: #111;
+      font-family: Arial, sans-serif;
       color: #fff;
-      touch-action: manipulation;
     }
-    button {
+
+    a {
+      display: inline-block;
       padding: 22px 34px;
       font-size: 18px;
-      border: none;
-      border-radius: 14px;
       background: #4CAF50;
-      color: white;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 14px;
       user-select: none;
       -webkit-user-select: none;
-      -webkit-touch-callout: none;
+    }
+
+    .hint {
+      position: absolute;
+      bottom: 40px;
+      font-size: 14px;
+      opacity: 0.8;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-<button id="holdBtn">Hold to open in browser</button>
+<a href="https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1">
+  Hold & Open in Browser
+</a>
 
-<script>
-  let timer;
-  const holdTime = 2000; // 2 seconds
-  const link = "https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1";
-  const btn = document.getElementById("holdBtn");
-
-  btn.addEventListener("pointerdown", () => {
-    timer = setTimeout(() => {
-      window.open(link, "_self");
-    }, holdTime);
-  });
-
-  btn.addEventListener("pointerup", () => clearTimeout(timer));
-  btn.addEventListener("pointerleave", () => clearTimeout(timer));
-  btn.addEventListener("pointercancel", () => clearTimeout(timer));
-</script>
+<div class="hint">
+  Press and hold the button<br>
+  then tap <b>“Open in browser”</b>
+</div>
 
 </body>
 </html>
