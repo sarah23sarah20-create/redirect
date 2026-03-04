@@ -3,34 +3,47 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>18+ Access</title>
+
 <style>
 body{
   margin:0;
-  font-family:Arial;
   background:black;
   text-align:center;
+  font-family:Arial;
 }
+
 .container{
   position:relative;
 }
+
 img{
   width:100%;
-  filter: blur(5px);
+  filter: blur(6px);
 }
+
 .overlay{
   position:absolute;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
 }
-button{
-  padding:15px 30px;
-  font-size:18px;
+
+#holdBtn{
+  padding:18px 35px;
+  font-size:20px;
   background:red;
   color:white;
   border:none;
-  border-radius:8px;
+  border-radius:10px;
   cursor:pointer;
+}
+
+#progress{
+  margin-top:15px;
+  height:6px;
+  width:0%;
+  background:lime;
+  transition:width 0.1s linear;
 }
 </style>
 </head>
@@ -38,12 +51,45 @@ button{
 
 <div class="container">
   <img src="fotoja.jpg">
+  
   <div class="overlay">
-    <button onclick="window.location.href='https://t.ajrkmx1.com/403824/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN'">
-      🔞 ENTER 18+
-    </button>
+    <button id="holdBtn">🔞 MBAJ SHTYPUR 18+</button>
+    <div id="progress"></div>
   </div>
 </div>
+
+<script>
+let timer;
+let width = 0;
+let interval;
+
+const button = document.getElementById("holdBtn");
+const progress = document.getElementById("progress");
+
+button.addEventListener("mousedown", startHold);
+button.addEventListener("touchstart", startHold);
+
+button.addEventListener("mouseup", cancelHold);
+button.addEventListener("mouseleave", cancelHold);
+button.addEventListener("touchend", cancelHold);
+
+function startHold(){
+  width = 0;
+  interval = setInterval(()=>{
+    width += 5;
+    progress.style.width = width + "%";
+    if(width >= 100){
+      clearInterval(interval);
+      window.open("https://t.ajrkmx1.com/403824/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN","_blank");
+    }
+  },100); // 2 sekonda totale
+}
+
+function cancelHold(){
+  clearInterval(interval);
+  progress.style.width = "0%";
+}
+</script>
 
 </body>
 </html>
