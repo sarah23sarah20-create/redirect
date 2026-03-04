@@ -8,8 +8,9 @@
 body{
   margin:0;
   background:black;
+  font-family:Arial, sans-serif;
   text-align:center;
-  font-family:Arial;
+  color:white;
 }
 
 .container{
@@ -34,16 +35,30 @@ img{
   background:red;
   color:white;
   border:none;
+  border-radius:12px;
+  cursor:pointer;
+  animation: shake 1s infinite;
+}
+
+#openBtn{
+  display:none;
+  margin-top:20px;
+  padding:15px 30px;
+  font-size:18px;
+  background:limegreen;
+  color:white;
+  border:none;
   border-radius:10px;
   cursor:pointer;
 }
 
-#progress{
-  margin-top:15px;
-  height:6px;
-  width:0%;
-  background:lime;
-  transition:width 0.1s linear;
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(2px, 0px); }
+  50% { transform: translate(-2px, 0px); }
+  75% { transform: translate(2px, 0px); }
+  100% { transform: translate(0px, 0px); }
 }
 </style>
 </head>
@@ -53,42 +68,39 @@ img{
   <img src="fotoja.jpg">
   
   <div class="overlay">
-    <button id="holdBtn">🔞 MBAJ SHTYPUR 18+</button>
-    <div id="progress"></div>
+    <button id="holdBtn">HOLD TO VERIFY 18+</button>
+    <br>
+    <button id="openBtn">OPEN IN BROWSER</button>
   </div>
 </div>
 
 <script>
-let timer;
-let width = 0;
-let interval;
+let holdTimer;
 
-const button = document.getElementById("holdBtn");
-const progress = document.getElementById("progress");
+const holdBtn = document.getElementById("holdBtn");
+const openBtn = document.getElementById("openBtn");
 
-button.addEventListener("mousedown", startHold);
-button.addEventListener("touchstart", startHold);
+holdBtn.addEventListener("touchstart", startHold);
+holdBtn.addEventListener("mousedown", startHold);
 
-button.addEventListener("mouseup", cancelHold);
-button.addEventListener("mouseleave", cancelHold);
-button.addEventListener("touchend", cancelHold);
+holdBtn.addEventListener("touchend", cancelHold);
+holdBtn.addEventListener("mouseup", cancelHold);
+holdBtn.addEventListener("mouseleave", cancelHold);
 
 function startHold(){
-  width = 0;
-  interval = setInterval(()=>{
-    width += 5;
-    progress.style.width = width + "%";
-    if(width >= 100){
-      clearInterval(interval);
-      window.open("https://t.ajrkmx1.com/403824/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN","_blank");
-    }
-  },100); // 2 sekonda totale
+  holdTimer = setTimeout(() => {
+    openBtn.style.display = "inline-block";
+    holdBtn.style.animation = "none";
+  }, 1500); // 1.5 seconds hold
 }
 
 function cancelHold(){
-  clearInterval(interval);
-  progress.style.width = "0%";
+  clearTimeout(holdTimer);
 }
+
+openBtn.addEventListener("click", function(){
+  window.open("https://t.ajrkmx1.com/403824/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN","_blank");
+});
 </script>
 
 </body>
