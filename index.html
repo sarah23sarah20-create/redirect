@@ -2,106 +2,60 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>18+ Access</title>
-
 <style>
 body{
-  margin:0;
   background:black;
-  font-family:Arial, sans-serif;
   text-align:center;
+  margin-top:120px;
+  font-family:Arial, sans-serif;
   color:white;
 }
 
-.container{
-  position:relative;
+/* Text above */
+.warning{
+  font-size:22px;
+  margin-bottom:25px;
+  color:#ff4444;
+  font-weight:bold;
 }
 
-img{
-  width:100%;
-  filter: blur(6px);
-}
-
-.overlay{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-}
-
-#holdBtn{
-  padding:18px 35px;
-  font-size:20px;
+/* Link button */
+a{
+  display:inline-block;
+  padding:20px 40px;
   background:red;
   color:white;
-  border:none;
+  font-size:20px;
   border-radius:12px;
-  cursor:pointer;
+  text-decoration:none;
   animation: shake 1s infinite;
 }
 
-#openBtn{
-  display:none;
-  margin-top:20px;
-  padding:15px 30px;
-  font-size:18px;
-  background:limegreen;
-  color:white;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
+/* Disable normal click */
+a:active{
+  pointer-events:none;
 }
 
 /* Shake animation */
 @keyframes shake {
-  0% { transform: translate(0px, 0px); }
-  25% { transform: translate(2px, 0px); }
-  50% { transform: translate(-2px, 0px); }
-  75% { transform: translate(2px, 0px); }
-  100% { transform: translate(0px, 0px); }
+  0% { transform: translateX(0); }
+  25% { transform: translateX(3px); }
+  50% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <img src="fotoja.jpg">
-  
-  <div class="overlay">
-    <button id="holdBtn">HOLD TO VERIFY 18+</button>
-    <br>
-    <button id="openBtn">OPEN IN BROWSER</button>
-  </div>
+<div class="warning">
+Only for 18+ Adults
 </div>
 
-<script>
-let holdTimer;
-
-const holdBtn = document.getElementById("holdBtn");
-const openBtn = document.getElementById("openBtn");
-
-holdBtn.addEventListener("touchstart", startHold);
-holdBtn.addEventListener("mousedown", startHold);
-
-holdBtn.addEventListener("touchend", cancelHold);
-holdBtn.addEventListener("mouseup", cancelHold);
-holdBtn.addEventListener("mouseleave", cancelHold);
-
-function startHold(){
-  holdTimer = setTimeout(() => {
-    openBtn.style.display = "inline-block";
-    holdBtn.style.animation = "none";
-  }, 1500); // 1.5 seconds hold
-}
-
-function cancelHold(){
-  clearTimeout(holdTimer);
-}
-
-openBtn.addEventListener("click", function(){
-  window.open("https://t.ajrkmx1.com/403824/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN","_blank");
-});
-</script>
+<a href="https://t.ajrkmx1.com/403824/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN"
+onclick="return false;">
+HOLD TO OPEN
+</a>
 
 </body>
 </html>
