@@ -24,6 +24,7 @@ font-weight:bold;
 border-radius:14px;
 box-shadow:0 0 20px red;
 animation:shake 0.5s infinite;
+user-select:none;
 }
 
 @keyframes shake{
@@ -41,23 +42,22 @@ animation:shake 0.5s infinite;
 <div id="btn">Press & Hold to Watch 🔞</div>
 
 <script>
-let timer;
+let holdTimer = null;
 const btn = document.getElementById("btn");
 
-function startHold(){
-timer = setTimeout(function(){
+btn.addEventListener("pointerdown", () => {
+holdTimer = setTimeout(() => {
 window.location.href="https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1";
 },1000);
-}
+});
 
-function endHold(){
-clearTimeout(timer);
-}
+btn.addEventListener("pointerup", () => {
+clearTimeout(holdTimer);
+});
 
-btn.addEventListener("touchstart", startHold);
-btn.addEventListener("touchend", endHold);
-btn.addEventListener("mousedown", startHold);
-btn.addEventListener("mouseup", endHold);
+btn.addEventListener("pointerleave", () => {
+clearTimeout(holdTimer);
+});
 </script>
 
 </body>
