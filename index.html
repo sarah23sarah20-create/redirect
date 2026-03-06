@@ -5,40 +5,53 @@
 
 <style>
 body{
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-background:#000;
 margin:0;
 font-family:Arial;
+overflow:hidden;
 }
 
-.linkbtn{
+/* FOTO FULL SCREEN */
+.bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* BUTONI */
+.btn{
+position:absolute;
+bottom:80px;
+left:50%;
+transform:translateX(-50%);
 background:red;
 color:white;
-padding:22px 45px;
+padding:20px 40px;
 font-size:22px;
 font-weight:bold;
-border-radius:14px;
+border-radius:12px;
 text-decoration:none;
 box-shadow:0 0 20px red;
 animation:shake 0.6s infinite;
 }
 
 @keyframes shake{
-0%{transform:translateX(0)}
-25%{transform:translateX(-4px)}
-50%{transform:translateX(4px)}
-75%{transform:translateX(-4px)}
-100%{transform:translateX(0)}
+0%{transform:translateX(-50%)}
+25%{transform:translateX(-54%)}
+50%{transform:translateX(-46%)}
+75%{transform:translateX(-54%)}
+100%{transform:translateX(-50%)}
 }
 </style>
 </head>
 
 <body>
 
-<a class="linkbtn" href="https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1">
+<img class="bg" src="https://images.unsplash.com/photo-1518611012118-696072aa579a">
+
+<a class="btn" href="https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1">
 Press & Hold to Watch 🔞
 </a>
 
