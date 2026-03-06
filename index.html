@@ -2,7 +2,6 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>18+ Only</title>
 
 <style>
 body{
@@ -15,16 +14,16 @@ margin:0;
 font-family:Arial;
 }
 
-#btn{
+.linkbtn{
 background:red;
 color:white;
 padding:22px 45px;
 font-size:22px;
 font-weight:bold;
 border-radius:14px;
+text-decoration:none;
 box-shadow:0 0 20px red;
-animation:shake 0.5s infinite;
-user-select:none;
+animation:shake 0.6s infinite;
 }
 
 @keyframes shake{
@@ -39,26 +38,9 @@ user-select:none;
 
 <body>
 
-<div id="btn">Press & Hold to Watch 🔞</div>
-
-<script>
-let holdTimer = null;
-const btn = document.getElementById("btn");
-
-btn.addEventListener("pointerdown", () => {
-holdTimer = setTimeout(() => {
-window.location.href="https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1";
-},1000);
-});
-
-btn.addEventListener("pointerup", () => {
-clearTimeout(holdTimer);
-});
-
-btn.addEventListener("pointerleave", () => {
-clearTimeout(holdTimer);
-});
-</script>
+<a class="linkbtn" href="https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1">
+Press & Hold to Watch 🔞
+</a>
 
 </body>
 </html>
