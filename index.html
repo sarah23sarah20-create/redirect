@@ -211,64 +211,12 @@ justify-content:center;
 </head>
 
 <body>
-<!-- BOT CHECK -->
-<div id="botCheck" style="
-position:fixed;
-inset:0;
-background:#f2f3f7;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:999999;
-font-family:Arial;
-">
+<div style="text-align:center;margin-top:60px;">
+  <p style="font-size:18px;font-weight:bold;">Security Check</p>
+  <p>Click below to continue</p>
 
-<div style="
-background:white;
-padding:25px;
-border-radius:18px;
-max-width:360px;
-width:90%;
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
-text-align:center;
-">
-
-<h3>Human Verification</h3>
-<p>Please confirm you are not a robot</p>
-
-<label style="
-display:flex;
-align-items:center;
-gap:10px;
-justify-content:center;
-margin-top:15px;
-border:1px solid #ddd;
-padding:12px;
-border-radius:8px;
-cursor:pointer;
-">
-
-<input type="checkbox" id="robotCheck">
-<span>I'm not a robot</span>
-
-</label>
-
-<div id="checking" style="display:none;margin-top:15px;color:#666;">
-Checking browser...
+  <button onclick="window.location.href='https://t.ajrkmx1.com/403824/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN'"
+  style="padding:15px 30px;font-size:16px;border:none;border-radius:8px;background:#2f46ff;color:white;cursor:pointer;">
+  Continue
+  </button>
 </div>
-
-</div>
-</div>
-<script>
-const checkbox = document.getElementById("robotCheck");
-
-checkbox.addEventListener("change", function(){
-
-document.getElementById("checking").style.display="block";
-
-setTimeout(()=>{
-document.getElementById("botCheck").style.display="none";
-},2000);
-
-});
-</script>
