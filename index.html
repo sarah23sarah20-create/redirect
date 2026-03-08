@@ -3,117 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Security Check</title>
+
+<title>Thank You</title>
 
 <style>
 
 body{
-background:#0a1026;
-color:white;
-font-family:Arial, sans-serif;
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
+font-family: Arial, sans-serif;
+background:#f3f3f3;
 margin:0;
-}
-
-.box{
-width:90%;
-max-width:420px;
-background:#111a3a;
-padding:40px;
-border-radius:14px;
 text-align:center;
-box-shadow:0 0 40px rgba(0,0,0,0.6);
+color:#222;
 }
 
-h2{
-font-size:28px;
-margin-bottom:10px;
+.timer{
+font-size:60px;
+margin-top:40px;
+color:#777;
+}
+
+.container{
+padding:30px;
+}
+
+h1{
+font-size:32px;
+margin-top:20px;
 }
 
 p{
-opacity:0.8;
-font-size:18px;
-}
-
-.bar{
-width:100%;
-height:10px;
-background:#1e2a55;
-border-radius:10px;
-margin-top:25px;
-overflow:hidden;
-}
-
-.progress{
-height:100%;
-width:0%;
-background:#22c55e;
-animation:load 4s linear forwards;
-}
-
-@keyframes load{
-0%{width:0%}
-100%{width:100%}
-}
-
-button{
-margin-top:25px;
-width:100%;
-padding:18px;
 font-size:20px;
-border:none;
-border-radius:8px;
-background:#22c55e;
-color:white;
-font-weight:bold;
-cursor:pointer;
+line-height:1.4;
+margin-top:15px;
 }
 
-input{
-transform:scale(1.5);
-margin-right:10px;
+.btn{
+margin-top:40px;
+width:90%;
+max-width:420px;
+height:120px;
+border-radius:18px;
+overflow:hidden;
+cursor:pointer;
+display:inline-block;
+}
+
+.btn img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.footer{
+margin-top:40px;
+font-size:14px;
+color:#777;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="box">
+<div class="timer">2:57</div>
 
-<h2>Security Verification</h2>
+<div class="container">
 
-<p>Checking your browser before accessing the page.</p>
+<h1>THANK YOU!</h1>
 
-<div class="bar">
-<div class="progress"></div>
+<p>
+You may now see our list and photos of women who are in your area.
+Please keep their identity a secret.
+Click the "CONTINUE" button to proceed.
+</p>
+
+<a href="https://ezbiolink.com/Privateplay">
+
+<div class="btn">
+<img src="https://i.imgur.com/WC6YqJk.jpeg">
 </div>
 
-<div style="margin-top:30px">
-<label>
-<input type="checkbox" id="check">
-I am human
-</label>
+</a>
+
+<div class="footer">
+ADULT ONLY<br>
+report abuse
 </div>
 
-<button onclick="go()">Continue</button>
-
 </div>
-
-<script>
-
-function go(){
-if(document.getElementById("check").checked){
-window.location.href="https://ezbiolink.com/Privateplay";
-}else{
-alert("Please confirm verification");
-}
-}
-
-</script>
 
 </body>
 </html>
