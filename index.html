@@ -1,222 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GIRLS LIVE +18</title>
-
+<title>Security Check</title>
 <style>
 body{
-  font-family: Arial, sans-serif;
-  background:#f2f3f7;
-  margin:0;
-  padding:30px 15px;
-  text-align:center;
-}
-
-/* BOT CHECK */
-#botCheck{
-position:fixed;
-inset:0;
-background:#f2f3f7;
+background:#0f172a;
+color:white;
+font-family:Arial;
 display:flex;
 align-items:center;
 justify-content:center;
-z-index:999999;
-}
-
-.bot-box{
-background:white;
-padding:25px;
-border-radius:18px;
-max-width:360px;
-width:90%;
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
+height:100vh;
 text-align:center;
 }
 
-.verify-btn{
-margin-top:15px;
-border:1px solid #ddd;
-padding:12px;
-border-radius:8px;
-cursor:pointer;
-display:flex;
-align-items:center;
-gap:10px;
-justify-content:center;
+.box{
+background:#111827;
+padding:30px;
+border-radius:10px;
+width:320px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
 }
 
-/* KODI JOT ORIGINAL */
-.card{
-  background:white;
-  border-radius:22px;
-  padding:18px;
-  max-width:380px;
-  margin:auto;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-.header{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-.profile-wrap{
-  position:relative;
-  width:78px;
-  height:78px;
-}
-.profile{
-  width:78px;
-  height:78px;
-  border-radius:50%;
-  object-fit:cover;
-  position:relative;
-  top:-16px;
-}
-.online-dot{
-  position:absolute;
-  bottom:18px;
-  right:6px;
-  width:16px;
-  height:16px;
-  background:#22c55e;
-  border:3px solid white;
-  border-radius:50%;
-  animation:pulse 1.6s infinite;
-}
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(34,197,94,0.7);}
-  70%{box-shadow:0 0 0 10px rgba(34,197,94,0);}
-  100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}
-}
-.live-badge{
-  background:#ff2d2d;
-  color:#fff;
-  font-size:11px;
-  font-weight:bold;
-  padding:3px 6px;
-  border-radius:6px;
-  animation:livePulse 1.4s infinite;
-}
-@keyframes livePulse{
-  0%{transform:scale(1);opacity:1;}
-  50%{transform:scale(1.15);opacity:.7;}
-  100%{transform:scale(1);opacity:1;}
-}
-.title-wrap{text-align:left;}
-.title{
-  font-size:22px;
-  font-weight:bold;
-  color:#2f3cff;
-  display:flex;
-  align-items:center;
-  gap:6px;
-}
-.verify{width:20px;height:20px;}
-.row{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin:6px 0;
-}
-.stars{color:gold;font-size:18px;}
-.stats{
-  display:flex;
-  gap:18px;
-  color:#ff4aa2;
-  font-weight:bold;
-  font-size:14px;
-}
-.viewers{
-  margin-top:6px;
-  font-size:13px;
-  color:#ff2d75;
-  font-weight:bold;
-}
-.banner{
-  margin:18px auto;
-  max-width:380px;
-}
-.banner img{
-  width:100%;
-  border-radius:14px;
-}
-.btn{
-  display:block;
-  width:100%;
-  max-width:380px;
-  margin:14px auto;
-  padding:20px;
-  border-radius:35px;
-  background:linear-gradient(90deg,#4c6bff,#2f46ff);
-  color:white;
-  font-size:18px;
-  font-weight:bold;
-  border:none;
-  cursor:pointer;
-}
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-.modal-box{
-  background:#fff;
-  width:90%;
-  max-width:420px;
-  border-radius:22px;
-  padding:22px;
-  position:relative;
-  text-align:center;
-}
-.close{
-  position:absolute;
-  top:10px;
-  right:14px;
-  font-size:22px;
-  cursor:pointer;
-}
-.typing{
-  font-weight:bold;
-  color:#ff2d75;
-  margin-bottom:10px;
-}
-.join{
-  display:block;
-  margin-top:14px;
-  padding:16px;
-  border-radius:30px;
-  background:linear-gradient(90deg,#4c6bff,#2f46ff);
-  color:white;
-  font-weight:bold;
-  text-decoration:none;
-}
-.shake{
-  animation:shake 2.5s infinite;
-}
-@keyframes shake{
-  0%,100%{transform:translateX(0);}
-  10%{transform:translateX(-2px);}
-  20%{transform:translateX(2px);}
-  30%{transform:translateX(-2px);}
-  40%{transform:translateX(2px);}
-  50%{transform:translateX(0);}
+button{
+background:#22c55e;
+border:none;
+padding:15px;
+width:100%;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+margin-top:20px;
 }
 </style>
 </head>
 
 <body>
-<div style="text-align:center;margin-top:60px;">
-  <p style="font-size:18px;font-weight:bold;">Security Check</p>
-  <p>Click below to continue</p>
 
-  <button onclick="window.location.href='https://t.ajrkmx1.com/403824/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN'"
-  style="padding:15px 30px;font-size:16px;border:none;border-radius:8px;background:#2f46ff;color:white;cursor:pointer;">
-  Continue
-  </button>
+<div class="box">
+<h2>Bot Verification</h2>
+<p>Please confirm you are not a robot.</p>
+
+<label>
+<input type="checkbox" id="check">
+ I am human
+</label>
+
+<button onclick="go()">Continue</button>
+
 </div>
+
+<script>
+function go(){
+if(document.getElementById("check").checked){
+window.location.href="https://ezbiolink.com/Privateplay";
+}else{
+alert("Please verify first");
+}
+}
+</script>
+
+</body>
+</html>
