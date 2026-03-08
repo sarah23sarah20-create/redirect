@@ -1,88 +1,246 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GIRLS LIVE +18</title>
 
 <style>
 body{
-margin:0;
-background:black;
-font-family:Arial;
-overflow:hidden;
+  font-family: Arial, sans-serif;
+  background:#f2f3f7;
+  margin:0;
+  padding:30px 15px;
+  text-align:center;
 }
 
-/* VIDEO PLAYER FAKE */
-.player{
+/* BOT CHECK */
+#botCheck{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:url("https://images.unsplash.com/photo-1518611012118-696072aa579a") center/cover no-repeat;
+inset:0;
+background:#f2f3f7;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
+z-index:999999;
 }
 
-/* PLAY ICON */
-.play{
-width:90px;
-height:90px;
-background:rgba(0,0,0,0.6);
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:40px;
-color:white;
+.bot-box{
+background:white;
+padding:25px;
+border-radius:18px;
+max-width:360px;
+width:90%;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+text-align:center;
 }
 
-/* HOLD BUTTON */
+.verify-btn{
+margin-top:15px;
+border:1px solid #ddd;
+padding:12px;
+border-radius:8px;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:10px;
+justify-content:center;
+}
+
+/* KODI JOT ORIGINAL */
+.card{
+  background:white;
+  border-radius:22px;
+  padding:18px;
+  max-width:380px;
+  margin:auto;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+.header{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.profile-wrap{
+  position:relative;
+  width:78px;
+  height:78px;
+}
+.profile{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  object-fit:cover;
+  position:relative;
+  top:-16px;
+}
+.online-dot{
+  position:absolute;
+  bottom:18px;
+  right:6px;
+  width:16px;
+  height:16px;
+  background:#22c55e;
+  border:3px solid white;
+  border-radius:50%;
+  animation:pulse 1.6s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(34,197,94,0.7);}
+  70%{box-shadow:0 0 0 10px rgba(34,197,94,0);}
+  100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}
+}
+.live-badge{
+  background:#ff2d2d;
+  color:#fff;
+  font-size:11px;
+  font-weight:bold;
+  padding:3px 6px;
+  border-radius:6px;
+  animation:livePulse 1.4s infinite;
+}
+@keyframes livePulse{
+  0%{transform:scale(1);opacity:1;}
+  50%{transform:scale(1.15);opacity:.7;}
+  100%{transform:scale(1);opacity:1;}
+}
+.title-wrap{text-align:left;}
+.title{
+  font-size:22px;
+  font-weight:bold;
+  color:#2f3cff;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.verify{width:20px;height:20px;}
+.row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:6px 0;
+}
+.stars{color:gold;font-size:18px;}
+.stats{
+  display:flex;
+  gap:18px;
+  color:#ff4aa2;
+  font-weight:bold;
+  font-size:14px;
+}
+.viewers{
+  margin-top:6px;
+  font-size:13px;
+  color:#ff2d75;
+  font-weight:bold;
+}
+.banner{
+  margin:18px auto;
+  max-width:380px;
+}
+.banner img{
+  width:100%;
+  border-radius:14px;
+}
 .btn{
-position:absolute;
-bottom:100px;
-left:50%;
-transform:translateX(-50%);
-background:#ff1a1a;
-color:white;
-padding:22px 35px;
-font-size:24px;
-font-weight:bold;
-border-radius:20px;
-text-decoration:none;
-box-shadow:0 0 20px red;
-animation:shake 0.6s infinite;
+  display:block;
+  width:100%;
+  max-width:380px;
+  margin:14px auto;
+  padding:20px;
+  border-radius:35px;
+  background:linear-gradient(90deg,#4c6bff,#2f46ff);
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
 }
-
-/* SHAKE */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.modal-box{
+  background:#fff;
+  width:90%;
+  max-width:420px;
+  border-radius:22px;
+  padding:22px;
+  position:relative;
+  text-align:center;
+}
+.close{
+  position:absolute;
+  top:10px;
+  right:14px;
+  font-size:22px;
+  cursor:pointer;
+}
+.typing{
+  font-weight:bold;
+  color:#ff2d75;
+  margin-bottom:10px;
+}
+.join{
+  display:block;
+  margin-top:14px;
+  padding:16px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#4c6bff,#2f46ff);
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+}
+.shake{
+  animation:shake 2.5s infinite;
+}
 @keyframes shake{
-0%{transform:translate(-50%,0)}
-25%{transform:translate(-53%,0)}
-50%{transform:translate(-47%,0)}
-75%{transform:translate(-53%,0)}
-100%{transform:translate(-50%,0)}
+  0%,100%{transform:translateX(0);}
+  10%{transform:translateX(-2px);}
+  20%{transform:translateX(2px);}
+  30%{transform:translateX(-2px);}
+  40%{transform:translateX(2px);}
+  50%{transform:translateX(0);}
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="player">
-<div class="play">▶</div>
+<!-- BOT CHECK -->
+<div id="botCheck">
+<div class="bot-box">
+
+<h3>Human Verification</h3>
+<p>Please confirm you are not a robot</p>
+
+<div class="verify-btn" onclick="verifyHuman()">
+<input type="checkbox" id="robotCheck">
+<span>I'm not a robot</span>
 </div>
 
-<a class="btn" 
-href="https://t.bl-fastcdn.com/directclick/?pid=LtcOpdZ1vipde6Kf26wSmHTBHMI1"
-onclick="return false;">
-Press & Hold to Watch 🔞
-</a>
+<div id="checking" style="display:none;margin-top:15px;font-size:14px;color:#666;">
+Checking browser...
+</div>
 
+</div>
+</div>
+
+<!-- KODI YT VAZHDON POSHTE -->
+
+<div class="card">
 <script>
-document.querySelector(".btn").addEventListener("click",function(e){
-e.preventDefault();
-});
-</script>
+function verifyHuman(){
+document.getElementById("robotCheck").checked=true;
+document.getElementById("checking").style.display="block";
 
-</body>
-</html>
+setTimeout(()=>{
+document.getElementById("botCheck").style.display="none";
+},2000);
+}
+</script>
