@@ -3,133 +3,255 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Profile</title>
+<title>HOME</title>
 
 <style>
-
 body{
-margin:0;
-background:#eeeeee;
-font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  background:#f2f3f7;
+  margin:0;
+  padding:30px 15px;
+  text-align:center;
 }
-
-.wrapper{
-display:flex;
-align-items:center;
-padding:30px 40px;
-background:#eeeeee;
+.card{
+  background:white;
+  border-radius:22px;
+  padding:18px;
+  max-width:380px;
+  margin:auto;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
-
-.avatar{
-width:140px;
-height:140px;
-border-radius:50%;
-object-fit:cover;
-margin-right:30px;
+.header{
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
-
-.name-row{
-display:flex;
-align-items:center;
-gap:15px;
+.profile-wrap{
+  position:relative;
+  width:78px;
+  height:78px;
 }
-
-.name{
-font-size:44px;
-font-weight:900;
-color:#24246b;
-letter-spacing:1px;
+.profile{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  object-fit:cover;
+  position:relative;
+  top:-16px;
 }
-
-.flag{
-font-size:32px;
+.online-dot{
+  position:absolute;
+  bottom:18px;
+  right:6px;
+  width:16px;
+  height:16px;
+  background:#22c55e;
+  border:3px solid white;
+  border-radius:50%;
+  animation:pulse 1.6s infinite;
 }
-
-.verify{
-background:#4b4cff;
-color:white;
-border-radius:50%;
-width:30px;
-height:30px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:18px;
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(34,197,94,0.7);}
+  70%{box-shadow:0 0 0 10px rgba(34,197,94,0);}
+  100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}
 }
-
-.stars{
-color:#f4b400;
-font-size:32px;
-margin-top:8px;
-letter-spacing:5px;
+.live-badge{
+  background:#ff2d2d;
+  color:#fff;
+  font-size:11px;
+  font-weight:bold;
+  padding:3px 6px;
+  border-radius:6px;
+  animation:livePulse 1.4s infinite;
 }
-
+@keyframes livePulse{
+  0%{transform:scale(1);opacity:1;}
+  50%{transform:scale(1.15);opacity:.7;}
+  100%{transform:scale(1);opacity:1;}
+}
+.title-wrap{text-align:left;}
+.title{
+  font-size:22px;
+  font-weight:bold;
+  color:#2f3cff;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.verify{width:20px;height:20px;}
+.row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:6px 0;
+}
+.stars{color:gold;font-size:18px;}
 .stats{
-display:flex;
-gap:50px;
-margin-top:15px;
+  display:flex;
+  gap:18px;
+  color:#ff4aa2;
+  font-weight:bold;
+  font-size:14px;
 }
-
-.stat{
-display:flex;
-align-items:center;
-font-size:26px;
-color:#f06292;
+.viewers{
+  margin-top:6px;
+  font-size:13px;
+  color:#ff2d75;
+  font-weight:bold;
 }
-
-.icon{
-color:#24246b;
-font-size:28px;
-margin-right:10px;
+.banner{
+  margin:18px auto;
+  max-width:380px;
 }
-
+.banner img{
+  width:100%;
+  border-radius:14px;
+}
+.btn{
+  display:block;
+  width:100%;
+  max-width:380px;
+  margin:14px auto;
+  padding:20px;
+  border-radius:35px;
+  background:linear-gradient(90deg,#4c6bff,#2f46ff);
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+}
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.modal-box{
+  background:#fff;
+  width:90%;
+  max-width:420px;
+  border-radius:22px;
+  padding:22px;
+  position:relative;
+  text-align:center;
+}
+.close{
+  position:absolute;
+  top:10px;
+  right:14px;
+  font-size:22px;
+  cursor:pointer;
+}
+.typing{
+  font-weight:bold;
+  color:#ff2d75;
+  margin-bottom:10px;
+}
+.join{
+  display:block;
+  margin-top:14px;
+  padding:16px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#4c6bff,#2f46ff);
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+}
+.shake{
+  animation:shake 2.5s infinite;
+}
+@keyframes shake{
+  0%,100%{transform:translateX(0);}
+  10%{transform:translateX(-2px);}
+  20%{transform:translateX(2px);}
+  30%{transform:translateX(-2px);}
+  40%{transform:translateX(2px);}
+  50%{transform:translateX(0);}
+}
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
-
-<img src="avatar.jpg" class="avatar">
-
-<div>
-
-<div class="name-row">
-<div class="name">QUEENCHLOEXO</div>
-<div class="flag">🇺🇸</div>
-<div class="verify">✓</div>
+<div style="max-width:410px;margin:auto;">
+  <img src="https://i.imgur.com/VGFYJUA.jpg" style="width:100%;border-radius:20px;">
+</div>
+<div class="banner">
+  <a href="https://t.ajrkmx1.
+com/403824/8780/0?bo=2779,2778,2777,2776,2775&file_id=600151&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0002" target="_blank">
+    <img src="https://www.imglnkx.com/8780/PMKT-1157_DESIGN-16618_BannersWebinar_HBD_300100.gif">
+  </a>
 </div>
 
-<div class="stars">★★★★★</div>
+<button class="btn">Explicit Content</button>
+<button class="btn">+18 Livestream</button>
 
-<div class="stats">
-
-<div class="stat">
-<span class="icon">🎞</span>
-79 videos
+<div class="banner">
+  <a href="https://t.ajrkmx1.com/403824/8780/0?bo=2779,2778,2777,2776,2775&file_id=616508&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0002" target="_blank">
+    <img src="https://www.imglnkx.com/8780/JM-645_DESIGN-22450_LATEXJOY_640360.jpg">
+  </a>
 </div>
 
-<div class="stat">
-<span class="icon">🖼</span>
-107 photos
+<div class="modal" id="modal">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="close" onclick="closeModal()">✕</div>
+    <h2>QUEENCHLOEXO</h2>
+
+    <div class="typing" id="typingText">Anna is typing...</div>
+
+    <p>
+      Watch my content for <b>FREE</b><br><br>
+      1 – Create a free account<br>
+      2 – Get lifetime free access<br>
+      3 – Enjoy me & thousands of models
+    </p>
+
+    <div class="banner">
+      <a href="https://t.ajrkmx1.com/403824/8780/0?bo=2779,2778,2777,2776,2775&file_id=598296&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0002" target="_blank">
+        <img src="https://www.imglnkx.com/8780/PMKT-1157_DESIGN-16618_BannersWebinar_SexiVegasXX_300100.gif">
+      </a>
+    </div>
+
+    <a class="join shake" href="https://t.ajrkmx1.com/403824/8780/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN" target="_blank">
+      FREE ACCESS FOR <span id="countdown">02:59</span>
+    </a>
+  </div>
 </div>
 
-</div>
+<script>
+const modal = document.getElementById("modal");
 
-</div>
+function openModal(){modal.style.display="flex";}
+function closeModal(){modal.style.display="none";}
 
-</div>
+document.body.addEventListener("click",e=>{
+  if(e.target.closest("a")) return;
+  if(modal.style.display!=="flex") openModal();
+});
+
+let v=2341;
+setInterval(()=>viewerCount.textContent=(v+=Math.floor(Math.random()*3)).toLocaleString(),2000);
+
+let time=179;
+setInterval(()=>{
+  const m=String(Math.floor(time/60)).padStart(2,'0');
+  const s=String(time%60).padStart(2,'0');
+  countdown.textContent=`${m}:${s}`;
+  if(time>0) time--;
+},1000);
+
+// HIQ "Anna is typing..." PAS 3 SEKONDASH
+setTimeout(()=>{
+  const t=document.getElementById("typingText");
+  if(t) t.style.display="none";
+},3000);
+</script>
+
+<script defer src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.ajrkmx1.com/403824/8780/0?bo=2779%2C2778%2C2777%2C2776%2C2775&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0018"></script>
 
 </body>
 </html>
-<script src="https://crxcr2.com/popin/latest/affstitial-min.js"></script>
-<script>
-var crakPopInParamsOverlay = {
-url: 'https://t.ajrkmx1.com/403824/8780/0?bo=2779,2C2778,2C2777,2C2776,2C2775&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0019',
-decryptUrl: false,
-contentType: 'overlay',
-coverOverlay: true, 
-expireDays: 0.01
-};
-</script>
