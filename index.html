@@ -223,15 +223,35 @@ com/403824/8780/0?bo=2779,2778,2777,2776,2775&file_id=600151&po=6533&aff_sub5=SF
 </div>
 
 <script>
+// ----------------------- LOADING 2 SEKONDA PARA POPUP -----------------------
 const modal = document.getElementById("modal");
+const countdown = document.getElementById("countdown");
+const viewerCount = document.createElement("span");
+viewerCount.id = "viewerCount"; 
+document.body.appendChild(viewerCount);
 
-function openModal(){modal.style.display="flex";}
-function closeModal(){modal.style.display="none";}
+setTimeout(()=>{
+  const t=document.getElementById("typingText");
+  if(t) t.style.display="none";
+},3000);
 
-document.body.addEventListener("click",e=>{
+document.body.addEventListener("click", e => {
   if(e.target.closest("a")) return;
-  if(modal.style.display!=="flex") openModal();
+
+  // Shfaq loading për 2 sekonda
+  const loading = document.createElement("div");
+  loading.id = "tempLoading";
+  loading.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.65);color:white;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:bold;z-index:9999;";
+  loading.textContent = "Loading...";
+  document.body.appendChild(loading);
+
+  setTimeout(()=>{
+    document.body.removeChild(loading);
+    modal.style.display = "flex";
+  }, 2000); // 2 sekonda
 });
+
+function closeModal(){modal.style.display="none";}
 
 let v=2341;
 setInterval(()=>viewerCount.textContent=(v+=Math.floor(Math.random()*3)).toLocaleString(),2000);
@@ -243,12 +263,6 @@ setInterval(()=>{
   countdown.textContent=`${m}:${s}`;
   if(time>0) time--;
 },1000);
-
-// HIQ "Anna is typing..." PAS 3 SEKONDASH
-setTimeout(()=>{
-  const t=document.getElementById("typingText");
-  if(t) t.style.display="none";
-},3000);
 </script>
 
 <script defer src="https://crxcr2.com/cams-widget-ext/im_jerky?lang=en&mode=prerecorded&outlinkUrl=https://t.ajrkmx1.com/403824/8780/0?bo=2779%2C2778%2C2777%2C2776%2C2775&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0018"></script>
